@@ -1,0 +1,16 @@
+Daamky source-only conversion
+
+Changes:
+- Removed libs/recovered-bytecode.jar.
+- Removed the recovered-bytecode JAR from Gradle dependencies and jar embedding.
+- Gradle now compiles the complete src/main/java source tree using the default source set.
+- Kept the other project libraries and original resources/mappings.
+
+Build verification:
+A complete Gradle build was NOT verified in the preparation environment because Gradle 8.12.1 could not be downloaded (network access to services.gradle.org unavailable).
+Run ./gradlew build (or gradlew.bat build on Windows) in an environment with network access and JDK 21.
+
+Rename pass:
+- Project identity/resources: arbuz -> daamky.
+- Java namespace: org.patch.arbuzhack -> ua.patch.daamky.
+- Mixin/accessor prefix: arbuz$ -> daamky$.
